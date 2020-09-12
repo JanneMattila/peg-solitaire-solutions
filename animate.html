@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=yes" />
+    <title>Peg Solitaire Animation</title>
+</head>
+
+<body>
+    <p>Example solution:</p>
+    <div>
+        <canvas id="canvas1">
+            No canvas support so cannot display the board.
+        </canvas>
+    </div>
+    <div id="caption1"></div>
+    <p>Board begin state:</p>
+    <div>
+        <canvas id="canvas2">
+            No canvas support so cannot display the board.
+        </canvas>
+    </div>
+    <div id="caption2"></div>
+    <p>Board end state:</p>
+    <div>
+        <canvas id="canvas3">
+            No canvas support so cannot display the board.
+        </canvas>
+    </div>
+    <div id="caption3"></div>
+
+    <script src="js/require.js"></script>
+    <script>
+        require.config({
+            baseUrl: "http://jannemattila.github.io/peg-solitaire-solutions/js/"
+        });
+
+        require(["MyPocketSolitaireJS"],
+            function (myPocketSolitaire) {
+                myPocketSolitaire.Run({
+                    canvas: "canvas1",
+                    caption: "caption1",
+                    game: "3QZX7YR4FRMKJL577YR4WYHJUW4RAIGUJXXVPD1MUW2PMKSQCAAIPDDFFRRPOQ",
+                    animateMoves: true
+                });
+                myPocketSolitaire.Run({
+                    canvas: "canvas2",
+                    caption: "caption2"
+                });
+                myPocketSolitaire.Run({
+                    canvas: "canvas3",
+                    caption: "caption3",
+                    game: "3QZX7YR4FRMKJL577YR4WYHJUW4RAIGUJXXVPD1MUW2PMKSQCAAIPDDFFRRPOQ",
+                    animateMoves: false
+                });
+            });
+    </script>
+</body>
+
+</html>
